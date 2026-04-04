@@ -8,12 +8,18 @@ const tagStyles: Record<string, { bg: string; color: string }> = {
   emerald: { bg: "rgba(5,150,105,.1)", color: "#059669" },
   violet: { bg: "rgba(124,58,237,.1)", color: "#7C3AED" },
   orange: { bg: "rgba(234,88,12,.1)", color: "#EA580C" },
+  sky: { bg: "rgba(2,132,199,.1)", color: "#0284C7" },
+  pink: { bg: "rgba(190,24,93,.1)", color: "#be185d" },
+  teal: { bg: "rgba(13,148,136,.1)", color: "#0d9488" },
 };
 
 const stripeStyles: Record<string, string> = {
   emerald: "linear-gradient(90deg, #059669, #34d399)",
   violet: "linear-gradient(90deg, #7C3AED, #a78bfa)",
   orange: "linear-gradient(90deg, #EA580C, #fb923c)",
+  sky: "linear-gradient(90deg, #0284C7, #38bdf8)",
+  pink: "linear-gradient(90deg, #be185d, #f472b6)",
+  teal: "linear-gradient(90deg, #0d9488, #2dd4bf)",
 };
 
 export default function ArticleCard({
