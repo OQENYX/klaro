@@ -169,7 +169,7 @@ export default async function CategoryPage({ params }: PageProps) {
                   <Link
                     key={article.slug}
                     href={`/artikel/${article.slug}`}
-                    className={`rv ${i === 1 ? "d1" : i === 2 ? "d2" : ""} group relative flex flex-col gap-3.5 overflow-hidden rounded-[22px] bg-white p-8 no-underline`}
+                    className={`rv ${i === 1 ? "d1" : i === 2 ? "d2" : ""} group relative flex flex-col gap-2.5 overflow-hidden rounded-[18px] bg-white p-5 no-underline min-[860px]:gap-3.5 min-[860px]:rounded-[22px] min-[860px]:p-8`}
                     style={{
                       border: "1px solid rgba(0,0,0,.05)",
                       boxShadow: "0 2px 12px rgba(0,0,0,.04)",
@@ -191,7 +191,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     </span>
 
                     <div
-                      className="text-[21px] font-bold leading-[1.22] text-dark"
+                      className="text-[17px] font-bold leading-[1.22] text-dark min-[860px]:text-[21px]"
                       style={{ letterSpacing: "-.025em" }}
                     >
                       {article.title}
