@@ -7,6 +7,7 @@ import SourceList from "@/components/SourceList";
 import BackButton from "@/components/BackButton";
 import ShareButton from "@/components/ShareButton";
 import RelatedArticles from "@/components/RelatedArticles";
+import ArticleProgressBar from "@/components/ArticleProgressBar";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -73,6 +74,7 @@ export default async function ArticlePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ArticleProgressBar />
       <Nav />
       <article className="mx-auto max-w-[1080px] px-5 py-12 min-[860px]:px-8 min-[860px]:py-20">
         <div className="mx-auto max-w-[680px]">

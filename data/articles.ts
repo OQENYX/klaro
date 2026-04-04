@@ -201,4 +201,34 @@ export const articles: Article[] = [
     readTime: 6,
     date: "2026-01-15",
   },
+  {
+    id: "acesulfam-k",
+    title: "Acesulfam-K — was steckt hinter dem umstrittenen Süßstoff?",
+    excerpt:
+      "Die EFSA hat den ADI für Acesulfam-K im April 2025 auf 15 mg/kg erhöht. Was die Neubewertung wirklich bedeutet.",
+    category: "Süßstoffe",
+    categoryColor: "emerald",
+    readTime: 6,
+    date: "2026-04-04",
+  },
+  {
+    id: "whey-isolat-vs-konzentrat",
+    title: "Whey Isolat vs. Konzentrat — lohnt der Aufpreis?",
+    excerpt:
+      "Mehr Protein, weniger Laktose, höherer Preis: Wann Isolat wirklich sinnvoll ist — und wann Konzentrat reicht.",
+    category: "Protein",
+    categoryColor: "violet",
+    readTime: 6,
+    date: "2026-04-04",
+  },
+  {
+    id: "morbus-crohn-suessstoffe",
+    title: "Morbus Crohn & Süßstoffe — was die Forschung sagt",
+    excerpt:
+      "Können Süßstoffe Morbus Crohn auslösen oder verschlimmern? Die aktuellen Daten ehrlich bewertet.",
+    category: "Darm",
+    categoryColor: "sky",
+    readTime: 7,
+    date: "2026-04-04",
+  },
 ];
