@@ -231,4 +231,44 @@ export const articles: Article[] = [
     readTime: 7,
     date: "2026-04-04",
   },
+  {
+    id: "kohlenhydrate-abends-mythos",
+    title: "Kohlenhydrate abends — machen sie wirklich dick?",
+    excerpt:
+      "Chrononutrition, Insulinresistenz, Energiebilanz — was die Forschung zum Timing von Kohlenhydraten wirklich sagt.",
+    category: "Mythen",
+    categoryColor: "pink",
+    readTime: 5,
+    date: "2026-04-04",
+  },
+  {
+    id: "superfoods-mythos",
+    title: "Superfoods — Marketing oder Wissenschaft?",
+    excerpt:
+      "Goji, Chia, Açaí, Matcha: Was steckt wirklich hinter dem Superfood-Versprechen — und was sagt die Evidenz?",
+    category: "Mythen",
+    categoryColor: "pink",
+    readTime: 5,
+    date: "2026-04-04",
+  },
+  {
+    id: "intermittierendes-fasten",
+    title: "Intermittierendes Fasten — was die Evidenz wirklich sagt",
+    excerpt:
+      "16:8, 5:2, OMAD: Ist IF metabolisch überlegen oder nur ein anderer Weg zum Kaloriendefizit?",
+    category: "Abnehmen",
+    categoryColor: "orange",
+    readTime: 6,
+    date: "2026-04-04",
+  },
+  {
+    id: "kaloriendichte-satt-werden",
+    title: "Kaloriendichte — warum manche Lebensmittel satt machen",
+    excerpt:
+      "Wasser, Ballaststoffe, Protein: Was Sättigung wirklich steuert — und wie du mehr essen kannst und trotzdem abnimmst.",
+    category: "Abnehmen",
+    categoryColor: "orange",
+    readTime: 6,
+    date: "2026-04-04",
+  },
 ];

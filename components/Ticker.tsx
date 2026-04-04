@@ -1,16 +1,19 @@
-const items = [
-  "Aspartam & ADI-Werte",
-  "Proteinthermogenese",
-  "30–40% Kalorienschätzfehler",
-  "Morbus Crohn & Süßstoffe",
-  "EFSA Neubewertung 2026",
-  "Sucralose & Mikrobiom",
-  "Whey Isolat vs. Konzentrat",
-  "Acesulfam-K April 2026",
+"use client";
+
+import Link from "next/link";
+
+const items: { label: string; href: string }[] = [
+  { label: "Aspartam & ADI-Werte", href: "/artikel/aspartam-wirklich-gefaehrlich" },
+  { label: "Proteinthermogenese", href: "/artikel/protein-thermogenese-kalorien" },
+  { label: "30–40 % Kalorienschätzfehler", href: "/artikel/kalorien-schaetzen-warum-es-scheitert" },
+  { label: "Morbus Crohn & Süßstoffe", href: "/artikel/morbus-crohn-suessstoffe" },
+  { label: "Acesulfam-K EFSA 2025", href: "/artikel/acesulfam-k" },
+  { label: "Sucralose & Mikrobiom", href: "/artikel/sucralose-sicher-oder-nicht" },
+  { label: "Whey Isolat vs. Konzentrat", href: "/artikel/whey-isolat-vs-konzentrat" },
+  { label: "Superfoods — Mythos oder Fakten?", href: "/artikel/superfoods-mythos" },
 ];
 
 export default function Ticker() {
-  // Duplicate items for seamless loop
   const allItems = [...items, ...items];
 
   return (
@@ -26,16 +29,17 @@ export default function Ticker() {
     >
       <div
         className="flex w-max hover:[animation-play-state:paused]"
-        style={{ animation: "tick 26s linear infinite" }}
+        style={{ animation: "tick 30s linear infinite" }}
       >
         {allItems.map((item, i) => (
-          <span
+          <Link
             key={i}
-            className="inline-flex items-center gap-2.5 whitespace-nowrap px-6 text-[13px] font-medium text-sub"
+            href={item.href}
+            className="inline-flex items-center gap-2.5 whitespace-nowrap px-6 text-[13px] font-medium text-sub no-underline transition-colors duration-150 hover:text-dark"
           >
-            {item}
+            {item.label}
             <span className="h-[3px] w-[3px] shrink-0 rounded-full bg-[rgba(0,0,0,.15)]" />
-          </span>
+          </Link>
         ))}
       </div>
     </div>
