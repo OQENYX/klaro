@@ -34,6 +34,13 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "https://xn--nhro-loa.ch/feed.xml", title: "NÄHRO RSS Feed" },
+      ],
+    },
+  },
 };
 
 export default function RootLayout({
