@@ -117,6 +117,26 @@ export function IconClockHero() {
   );
 }
 
+export function IconFemale() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <circle cx="11" cy="8" r="4.5" stroke="white" strokeWidth="1.55" opacity=".9"/>
+      <path d="M11 12.5V19" stroke="white" strokeWidth="1.55" strokeLinecap="round" opacity=".9"/>
+      <path d="M8.5 16H13.5" stroke="white" strokeWidth="1.55" strokeLinecap="round" opacity=".9"/>
+    </svg>
+  );
+}
+
+export function IconMale() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <circle cx="9.5" cy="12.5" r="4.5" stroke="white" strokeWidth="1.55" opacity=".9"/>
+      <path d="M13 9L18 4" stroke="white" strokeWidth="1.55" strokeLinecap="round" opacity=".9"/>
+      <path d="M14.5 4H18V7.5" stroke="white" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round" opacity=".9"/>
+    </svg>
+  );
+}
+
 // Map icon name to component
 export function getCategoryIcon(icon: string) {
   switch (icon) {
@@ -126,6 +146,8 @@ export function getCategoryIcon(icon: string) {
     case "gut": return <IconGut />;
     case "bulb": return <IconBulb />;
     case "blocks": return <IconBlocks />;
+    case "female": return <IconFemale />;
+    case "male": return <IconMale />;
     default: return null;
   }
 }

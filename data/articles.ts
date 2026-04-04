@@ -3,13 +3,34 @@ export interface Article {
   title: string;
   excerpt: string;
   category: string;
-  categoryColor: "emerald" | "violet" | "orange" | "sky" | "pink" | "teal";
+  categoryColor: "emerald" | "violet" | "orange" | "sky" | "pink" | "teal" | "rose" | "indigo";
   readTime: number;
   date: string;
   featured?: boolean;
 }
 
 export const articles: Article[] = [
+  {
+    id: "endometriose-ernaehrung",
+    title: "Endometriose & Ernährung — was wirklich hilft",
+    excerpt:
+      "10% aller Frauen sind betroffen, die Diagnose dauert im Schnitt 7–10 Jahre. Was Ernährung bewirken kann — und was nicht.",
+    category: "Frauengesundheit",
+    categoryColor: "rose",
+    readTime: 8,
+    date: "2025-04-04",
+    featured: true,
+  },
+  {
+    id: "testosteron-ernaehrung",
+    title: "Testosteron & Ernährung — was wirklich wirkt",
+    excerpt:
+      "Zink, Vitamin D, Schlaf — was den Testosteronspiegel tatsächlich beeinflusst. Und warum die meisten Booster Geldverschwendung sind.",
+    category: "Männergesundheit",
+    categoryColor: "indigo",
+    readTime: 7,
+    date: "2025-04-03",
+  },
   {
     id: "kalorien-schaetzen-warum-es-scheitert",
     title: "Warum 'nach Gefühl essen' scheitert",
@@ -20,6 +41,46 @@ export const articles: Article[] = [
     readTime: 5,
     date: "2025-04-01",
     featured: true,
+  },
+  {
+    id: "vitamin-d-maenner",
+    title: "Vitamin D — warum so viele Männer unterversorgt sind",
+    excerpt:
+      "Besonders im Winter fehlt vielen Vitamin D. Wann Supplementation sinnvoll ist und was die DGE empfiehlt.",
+    category: "Männergesundheit",
+    categoryColor: "indigo",
+    readTime: 6,
+    date: "2025-03-30",
+  },
+  {
+    id: "periode-ernaehrung-zyklus",
+    title: "Ernährung im Zyklus — was dein Körper wann braucht",
+    excerpt:
+      "Eisenverlust, Heißhunger in der Lutealphase, Magnesium gegen PMS — die Wissenschaft hinter zyklusgerechter Ernährung.",
+    category: "Frauengesundheit",
+    categoryColor: "rose",
+    readTime: 7,
+    date: "2025-03-28",
+  },
+  {
+    id: "zink-magnesium-maenner",
+    title: "Zink & Magnesium — was Männer wissen sollten",
+    excerpt:
+      "Zwei essenzielle Mineralstoffe für Testosteron, Immunsystem und Schlaf. Was die Evidenz sagt — und warum ZMA überhypt ist.",
+    category: "Männergesundheit",
+    categoryColor: "indigo",
+    readTime: 6,
+    date: "2025-03-25",
+  },
+  {
+    id: "koerperfett-frauen",
+    title: "Körperfettanteil bei Frauen — wie viel ist gesund?",
+    excerpt:
+      "Essentielles Fett, RED-S, Amenorrhoe — warum ein zu niedriger Körperfettanteil bei Frauen gefährlich werden kann.",
+    category: "Frauengesundheit",
+    categoryColor: "rose",
+    readTime: 6,
+    date: "2025-03-22",
   },
   {
     id: "kalorien-was-sind-sie-wirklich",

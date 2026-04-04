@@ -11,6 +11,8 @@ const tagStyles: Record<string, { bg: string; color: string }> = {
   sky: { bg: "rgba(2,132,199,.1)", color: "#0284C7" },
   pink: { bg: "rgba(190,24,93,.1)", color: "#be185d" },
   teal: { bg: "rgba(13,148,136,.1)", color: "#0d9488" },
+  rose: { bg: "rgba(225,29,72,.1)", color: "#e11d48" },
+  indigo: { bg: "rgba(67,56,202,.1)", color: "#4338ca" },
 };
 
 const stripeStyles: Record<string, string> = {
@@ -20,6 +22,8 @@ const stripeStyles: Record<string, string> = {
   sky: "linear-gradient(90deg, #0284C7, #38bdf8)",
   pink: "linear-gradient(90deg, #be185d, #f472b6)",
   teal: "linear-gradient(90deg, #0d9488, #2dd4bf)",
+  rose: "linear-gradient(90deg, #e11d48, #fda4af)",
+  indigo: "linear-gradient(90deg, #4338ca, #a5b4fc)",
 };
 
 export default function ArticleCard({

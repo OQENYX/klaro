@@ -3,9 +3,9 @@ export interface Category {
   name: string;
   desc: string;
   longDesc: string;
-  color: "emerald" | "violet" | "orange" | "sky" | "pink" | "teal";
+  color: "emerald" | "violet" | "orange" | "sky" | "pink" | "teal" | "rose" | "indigo";
   count: number;
-  icon: "flask" | "molecule" | "clock" | "gut" | "bulb" | "blocks";
+  icon: "flask" | "molecule" | "clock" | "gut" | "bulb" | "blocks" | "female" | "male";
   topics: string[];
 }
 
@@ -75,6 +75,28 @@ export const categories: Category[] = [
     count: 2,
     icon: "blocks",
     topics: ["Makronährstoffe", "Mikronährstoffe", "Kalorien", "Vitamine", "Mineralstoffe"],
+  },
+  {
+    id: "frauengesundheit",
+    name: "Frauengesundheit",
+    desc: "Zyklus, Hormone, Endometriose — evidenzbasiert.",
+    longDesc:
+      "Periode, Körperfettanteil, Endometriose, Eisenmangel — Themen, die Millionen Frauen betreffen, aber oft zu wenig Aufmerksamkeit bekommen. Wir erklären die Wissenschaft dahinter und zeigen, was Ernährung bewirken kann.",
+    color: "rose",
+    count: 3,
+    icon: "female",
+    topics: ["Menstruationszyklus", "Endometriose", "Eisenmangel", "Körperfettanteil", "Hormone", "PCOS"],
+  },
+  {
+    id: "maennergesundheit",
+    name: "Männergesundheit",
+    desc: "Testosteron, Vitamine, Hormone — die Fakten.",
+    longDesc:
+      "Testosteronspiegel, Vitamin-D-Mangel, Zink und Magnesium — was beeinflusst die Männergesundheit wirklich? Evidenzbasierte Einordnung statt Supplement-Hype.",
+    color: "indigo",
+    count: 3,
+    icon: "male",
+    topics: ["Testosteron", "Vitamin D", "Zink & Magnesium", "Muskelerhalt", "Prostata", "Herzgesundheit"],
   },
 ];
 

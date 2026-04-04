@@ -4,7 +4,9 @@ export type CategoryName =
   | "Abnehmen"
   | "Darm"
   | "Mythen"
-  | "Grundlagen";
+  | "Grundlagen"
+  | "Frauengesundheit"
+  | "Männergesundheit";
 
 export interface Category {
   name: CategoryName;
@@ -49,6 +51,18 @@ export const categories: Category[] = [
     description: "Makros, Mikros, Basiswissen",
     bgColor: "#F5F5F3",
     textColor: "#424242",
+  },
+  {
+    name: "Frauengesundheit",
+    description: "Zyklus, Hormone, frauenspezifische Ernährung",
+    bgColor: "#FCE4EC",
+    textColor: "#AD1457",
+  },
+  {
+    name: "Männergesundheit",
+    description: "Testosteron, Mikronährstoffe, männerspezifische Ernährung",
+    bgColor: "#E0F2F1",
+    textColor: "#00695C",
   },
 ];
 
