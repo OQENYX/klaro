@@ -29,9 +29,11 @@ const stripeStyles: Record<string, string> = {
 export default function ArticleCard({
   article,
   className = "",
+  variant = "full",
 }: {
   article: Article;
   className?: string;
+  variant?: "full" | "compact";
 }) {
   const tag = tagStyles[article.categoryColor];
   const stripe = stripeStyles[article.categoryColor];
@@ -40,6 +42,46 @@ export default function ArticleCard({
     month: "long",
     year: "numeric",
   });
+
+  /* ── COMPACT MOBILE CARD ── */
+  if (variant === "compact") {
+    return (
+      <Link
+        href={`/artikel/${article.id}`}
+        className={`group relative flex items-center gap-4 overflow-hidden rounded-[14px] bg-white p-4 no-underline ${className}`}
+        style={{
+          border: "1px solid rgba(0,0,0,.05)",
+          boxShadow: "0 1px 6px rgba(0,0,0,.03)",
+        }}
+      >
+        {/* Color dot */}
+        <div
+          className="h-10 w-1 shrink-0 rounded-full"
+          style={{ background: stripe }}
+        />
+        <div className="min-w-0 flex-1">
+          <div className="mb-1 flex items-center gap-2">
+            <span
+              className="inline-flex items-center rounded-full px-2 py-[2px] text-[10px] font-bold"
+              style={{ background: tag.bg, color: tag.color }}
+            >
+              {article.category}
+            </span>
+            <span className="text-[10px] text-sub">{article.readTime} min</span>
+          </div>
+          <div
+            className="truncate text-[15px] font-bold leading-snug text-dark"
+            style={{ letterSpacing: "-.02em" }}
+          >
+            {article.title}
+          </div>
+        </div>
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] bg-bg text-dark transition-colors duration-150 group-hover:bg-dark group-hover:text-white">
+          <IconArrow />
+        </div>
+      </Link>
+    );
+  }
 
   /* ── FEATURED CARD ── */
   if (article.featured) {

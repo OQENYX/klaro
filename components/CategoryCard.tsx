@@ -26,10 +26,48 @@ const meshGradients: Record<string, string> = {
 export default function CategoryCard({
   category,
   className = "",
+  variant = "full",
 }: {
   category: Category;
   className?: string;
+  variant?: "full" | "compact";
 }) {
+  /* ── COMPACT MOBILE CARD ── */
+  if (variant === "compact") {
+    return (
+      <Link
+        href={`/kategorien/${category.id}`}
+        className={`group flex items-center gap-2.5 rounded-[14px] px-3 py-3 text-white no-underline ${className}`}
+        style={{
+          background: meshGradients[category.color],
+          boxShadow: "0 2px 10px rgba(0,0,0,.1)",
+        }}
+      >
+        <div
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] [&>svg]:h-3.5 [&>svg]:w-3.5"
+          style={{
+            background: "rgba(255,255,255,.2)",
+            border: "1px solid rgba(255,255,255,.2)",
+          }}
+        >
+          {getCategoryIcon(category.icon)}
+        </div>
+        <div className="min-w-0 flex-1">
+          <div
+            className="text-[12px] font-bold leading-tight text-white"
+            style={{ letterSpacing: "-.01em" }}
+          >
+            {category.name}
+          </div>
+          <div className="text-[9px] font-medium text-white/50">
+            {category.count} Artikel
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  /* ── FULL DESKTOP CARD ── */
   return (
     <Link
       href={`/kategorien/${category.id}`}

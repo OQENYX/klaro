@@ -17,7 +17,24 @@ export default function CategoryGrid() {
         >
           Alle Kategorien.
         </div>
-        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 min-[860px]:grid-cols-3 min-[860px]:gap-3.5">
+
+        {/* ── MOBILE: compact 2-col grid ── */}
+        <div className="grid grid-cols-2 gap-2.5 min-[860px]:hidden">
+          {categories.map((cat, i) => {
+            const delay = i % 3;
+            return (
+              <CategoryCard
+                key={cat.id}
+                category={cat}
+                variant="compact"
+                className={`rv ${delay === 1 ? "d1" : delay === 2 ? "d2" : ""}`}
+              />
+            );
+          })}
+        </div>
+
+        {/* ── DESKTOP: full gradient cards ── */}
+        <div className="hidden min-[860px]:grid grid-cols-3 gap-3.5">
           {categories.map((cat, i) => {
             const delay = i % 3;
             return (
