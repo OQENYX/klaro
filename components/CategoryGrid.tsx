@@ -3,21 +3,21 @@ import CategoryCard from "./CategoryCard";
 
 export default function CategoryGrid() {
   return (
-    <section className="bg-bg py-20" id="kat">
-      <div className="mx-auto max-w-[1080px] px-8 max-[860px]:px-5">
+    <section className="bg-bg py-14 min-[860px]:py-20" id="kat">
+      <div className="mx-auto max-w-[1080px] px-5 min-[860px]:px-8">
         <div className="rv mb-2 text-[11px] font-bold uppercase tracking-[.1em] text-sub">
           Themen
         </div>
         <div
-          className="rv mb-9 font-extrabold leading-[1.04] text-dark"
+          className="rv mb-6 font-extrabold leading-[1.04] text-dark min-[860px]:mb-9"
           style={{
-            fontSize: "clamp(28px, 3.5vw, 44px)",
+            fontSize: "clamp(26px, 3.5vw, 44px)",
             letterSpacing: "-.035em",
           }}
         >
           Alle Kategorien.
         </div>
-        <div className="grid grid-cols-3 gap-3.5 max-[860px]:grid-cols-2 max-[480px]:grid-cols-1">
+        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 min-[860px]:grid-cols-3 min-[860px]:gap-3.5">
           {categories.map((cat, i) => {
             const delay = i % 3;
             return (

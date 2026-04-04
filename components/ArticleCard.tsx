@@ -41,17 +41,19 @@ export default function ArticleCard({
     year: "numeric",
   });
 
+  /* ── FEATURED CARD ── */
   if (article.featured) {
     return (
       <Link
         href={`/artikel/${article.id}`}
-        className={`ac-card group relative flex items-center gap-12 overflow-hidden rounded-[22px] bg-white p-10 no-underline max-[860px]:flex-col max-[860px]:gap-6 max-[860px]:p-7 ${className}`}
+        className={`ac-card group relative flex flex-col gap-4 overflow-hidden rounded-[18px] bg-white p-6 no-underline min-[860px]:flex-row min-[860px]:items-center min-[860px]:gap-12 min-[860px]:rounded-[22px] min-[860px]:p-10 ${className}`}
         style={{
           border: "1px solid rgba(0,0,0,.05)",
           boxShadow: "0 2px 12px rgba(0,0,0,.04)",
-          gridColumn: "span 2",
+          gridColumn: "span 1",
           transition: "transform .2s ease, box-shadow .2s ease",
         }}
+        data-featured
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "translateY(-5px) scale(1.005)";
           e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,0,0,.09)";
@@ -68,32 +70,32 @@ export default function ArticleCard({
         />
         <div className="flex-1">
           <span
-            className="mb-3 inline-flex items-center rounded-full px-3 py-[5px] text-xs font-bold"
+            className="mb-2 inline-flex items-center rounded-full px-3 py-[5px] text-[11px] font-bold min-[860px]:mb-3 min-[860px]:text-xs"
             style={{ background: tag.bg, color: tag.color }}
           >
             {article.category} · {article.readTime} min
           </span>
           <div
-            className="text-[27px] font-bold leading-[1.22] text-dark"
+            className="text-[22px] font-bold leading-[1.22] text-dark min-[860px]:text-[27px]"
             style={{ letterSpacing: "-.025em" }}
           >
             {article.title}
           </div>
-          <div className="mt-3.5 text-sm font-normal leading-[1.7] text-sub">
+          <div className="mt-2 text-[13px] font-normal leading-[1.65] text-sub min-[860px]:mt-3.5 min-[860px]:text-sm min-[860px]:leading-[1.7]">
             {article.excerpt}
           </div>
           <div
-            className="mt-auto flex items-center justify-between pt-4"
+            className="mt-4 flex items-center justify-between pt-3"
             style={{ borderTop: "1px solid var(--color-line)" }}
           >
-            <span className="text-xs text-sub">{formattedDate}</span>
-            <div className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-bg text-dark transition-all duration-150 group-hover:bg-dark group-hover:text-white">
+            <span className="text-[11px] text-sub min-[860px]:text-xs">{formattedDate}</span>
+            <div className="flex h-7 w-7 items-center justify-center rounded-[10px] bg-bg text-dark transition-all duration-150 group-hover:bg-dark group-hover:text-white min-[860px]:h-8 min-[860px]:w-8">
               <IconArrow />
             </div>
           </div>
         </div>
         <div
-          className="flex h-[180px] w-[180px] shrink-0 items-center justify-center rounded-[20px] max-[860px]:hidden"
+          className="hidden min-[860px]:flex h-[180px] w-[180px] shrink-0 items-center justify-center rounded-[20px]"
           style={{
             background:
               "linear-gradient(135deg, rgba(5,150,105,.1), rgba(2,132,199,.08))",
@@ -106,10 +108,11 @@ export default function ArticleCard({
     );
   }
 
+  /* ── REGULAR CARD ── */
   return (
     <Link
       href={`/artikel/${article.id}`}
-      className={`ac-card group relative flex flex-col gap-3.5 overflow-hidden rounded-[22px] bg-white p-8 no-underline ${className}`}
+      className={`ac-card group relative flex flex-col gap-2.5 overflow-hidden rounded-[18px] bg-white p-6 no-underline min-[860px]:gap-3.5 min-[860px]:rounded-[22px] min-[860px]:p-8 ${className}`}
       style={{
         border: "1px solid rgba(0,0,0,.05)",
         boxShadow: "0 2px 12px rgba(0,0,0,.04)",
@@ -130,26 +133,26 @@ export default function ArticleCard({
         style={{ background: stripe }}
       />
       <span
-        className="inline-flex w-fit items-center rounded-full px-3 py-[5px] text-xs font-bold"
+        className="inline-flex w-fit items-center rounded-full px-3 py-[5px] text-[11px] font-bold min-[860px]:text-xs"
         style={{ background: tag.bg, color: tag.color }}
       >
         {article.category} · {article.readTime} min
       </span>
       <div
-        className="text-[21px] font-bold leading-[1.22] text-dark"
+        className="text-[19px] font-bold leading-[1.22] text-dark min-[860px]:text-[21px]"
         style={{ letterSpacing: "-.025em" }}
       >
         {article.title}
       </div>
-      <div className="text-sm font-normal leading-[1.7] text-sub">
+      <div className="text-[13px] font-normal leading-[1.65] text-sub min-[860px]:text-sm min-[860px]:leading-[1.7]">
         {article.excerpt}
       </div>
       <div
-        className="mt-auto flex items-center justify-between pt-4"
+        className="mt-2 flex items-center justify-between pt-3 min-[860px]:mt-auto min-[860px]:pt-4"
         style={{ borderTop: "1px solid var(--color-line)" }}
       >
-        <span className="text-xs text-sub">{formattedDate}</span>
-        <div className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-bg text-dark transition-all duration-150 group-hover:bg-dark group-hover:text-white">
+        <span className="text-[11px] text-sub min-[860px]:text-xs">{formattedDate}</span>
+        <div className="flex h-7 w-7 items-center justify-center rounded-[10px] bg-bg text-dark transition-all duration-150 group-hover:bg-dark group-hover:text-white min-[860px]:h-8 min-[860px]:w-8">
           <IconArrow />
         </div>
       </div>

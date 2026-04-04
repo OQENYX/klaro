@@ -4,7 +4,7 @@ import ArticleCard from "./ArticleCard";
 export default function ArticleGrid() {
   return (
     <div
-      className="mx-auto max-w-[1080px] px-8 py-20 max-[860px]:px-5"
+      className="mx-auto max-w-[1080px] px-5 py-14 min-[860px]:px-8 min-[860px]:py-20"
       id="art"
     >
       <div
@@ -13,15 +13,15 @@ export default function ArticleGrid() {
         Artikel
       </div>
       <div
-        className="rv mb-9 font-extrabold leading-[1.04] text-dark"
+        className="rv mb-6 font-extrabold leading-[1.04] text-dark min-[860px]:mb-9"
         style={{
-          fontSize: "clamp(28px, 3.5vw, 44px)",
+          fontSize: "clamp(26px, 3.5vw, 44px)",
           letterSpacing: "-.035em",
         }}
       >
         Was wir erklären.
       </div>
-      <div className="grid grid-cols-2 gap-3.5 max-[860px]:grid-cols-1">
+      <div className="grid grid-cols-1 gap-3 min-[860px]:grid-cols-2 min-[860px]:gap-3.5 [&>[data-featured]]:min-[860px]:col-span-2">
         {articles.map((article, i) => (
           <ArticleCard
             key={article.id}

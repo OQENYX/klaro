@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Nav() {
   return (
     <nav
-      className="sticky top-0 z-[500] flex h-14 items-center justify-between px-9 max-[860px]:px-5"
+      className="sticky top-0 z-[500] flex h-14 items-center justify-between px-5 min-[860px]:px-9"
       style={{
         background: "rgba(242,242,244,.88)",
         backdropFilter: "saturate(180%) blur(20px)",
@@ -17,7 +17,7 @@ export default function Nav() {
       >
         NÄHRO
       </Link>
-      <div className="flex gap-7 max-[860px]:hidden">
+      <div className="hidden min-[860px]:flex gap-7">
         <Link
           href="/artikel"
           className="text-[13px] font-medium text-sub no-underline transition-colors duration-150 hover:text-dark"

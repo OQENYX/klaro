@@ -17,6 +17,10 @@ const meshGradients: Record<string, string> = {
     "radial-gradient(ellipse 100% 80% at 0% 0%,#f472b6,transparent 65%),radial-gradient(ellipse 80% 100% at 100% 100%,#be185d,transparent 60%),radial-gradient(ellipse 70% 70% at 60% 20%,#ec4899,transparent 55%),linear-gradient(145deg,#831843,#9d174d)",
   teal:
     "radial-gradient(ellipse 100% 80% at 0% 0%,#2dd4bf,transparent 65%),radial-gradient(ellipse 80% 100% at 100% 100%,#0d9488,transparent 60%),radial-gradient(ellipse 70% 70% at 60% 20%,#14b8a6,transparent 55%),linear-gradient(145deg,#134e4a,#115e59)",
+  rose:
+    "radial-gradient(ellipse 100% 80% at 0% 0%,#fda4af,transparent 65%),radial-gradient(ellipse 80% 100% at 100% 100%,#e11d48,transparent 60%),radial-gradient(ellipse 70% 70% at 60% 20%,#f43f5e,transparent 55%),linear-gradient(145deg,#881337,#9f1239)",
+  indigo:
+    "radial-gradient(ellipse 100% 80% at 0% 0%,#a5b4fc,transparent 65%),radial-gradient(ellipse 80% 100% at 100% 100%,#4338ca,transparent 60%),radial-gradient(ellipse 70% 70% at 60% 20%,#6366f1,transparent 55%),linear-gradient(145deg,#312e81,#3730a3)",
 };
 
 export default function CategoryCard({

@@ -30,44 +30,44 @@ const items = [
 export default function WhySection() {
   return (
     <div
-      className="mx-auto max-w-[1080px] px-8 pb-20 max-[860px]:px-5"
+      className="mx-auto max-w-[1080px] px-5 pb-14 min-[860px]:px-8 min-[860px]:pb-20"
       id="why"
     >
       <div className="rv mb-2 text-[11px] font-bold uppercase tracking-[.1em] text-sub">
         Warum NÄHRO?
       </div>
       <div
-        className="rv mb-9 font-extrabold leading-[1.04] text-dark"
+        className="rv mb-6 font-extrabold leading-[1.04] text-dark min-[860px]:mb-9"
         style={{
-          fontSize: "clamp(28px, 3.5vw, 44px)",
+          fontSize: "clamp(26px, 3.5vw, 44px)",
           letterSpacing: "-.035em",
         }}
       >
         Das steckt dahinter.
       </div>
-      <div className="grid grid-cols-3 gap-3.5 max-[860px]:grid-cols-1">
+      <div className="grid grid-cols-1 gap-3 min-[860px]:grid-cols-3 min-[860px]:gap-3.5">
         {items.map((item) => (
           <div
             key={item.title}
-            className={`rv ${item.delay} flex flex-col gap-3.5 rounded-[22px] bg-white p-8`}
+            className={`rv ${item.delay} flex flex-col gap-3 rounded-[18px] bg-white p-6 min-[860px]:gap-3.5 min-[860px]:rounded-[22px] min-[860px]:p-8`}
             style={{
               border: "1px solid rgba(0,0,0,.05)",
               boxShadow: "0 2px 12px rgba(0,0,0,.04)",
             }}
           >
             <div
-              className="flex h-[46px] w-[46px] items-center justify-center rounded-[14px]"
+              className="flex h-10 w-10 items-center justify-center rounded-[12px] min-[860px]:h-[46px] min-[860px]:w-[46px] min-[860px]:rounded-[14px]"
               style={{ background: item.bg, color: item.color }}
             >
               {item.icon}
             </div>
             <div
-              className="text-[17px] font-bold text-dark"
+              className="text-[16px] font-bold text-dark min-[860px]:text-[17px]"
               style={{ letterSpacing: "-.02em" }}
             >
               {item.title}
             </div>
-            <p className="text-sm font-normal leading-[1.75] text-sub">
+            <p className="text-[13px] font-normal leading-[1.7] text-sub min-[860px]:text-sm min-[860px]:leading-[1.75]">
               {item.desc}
             </p>
           </div>

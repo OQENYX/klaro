@@ -3,10 +3,10 @@ const items = [
   "Proteinthermogenese",
   "30–40% Kalorienschätzfehler",
   "Morbus Crohn & Süßstoffe",
-  "EFSA Neubewertung 2025",
+  "EFSA Neubewertung 2026",
   "Sucralose & Mikrobiom",
   "Whey Isolat vs. Konzentrat",
-  "Acesulfam-K April 2025",
+  "Acesulfam-K April 2026",
 ];
 
 export default function Ticker() {

@@ -3,15 +3,12 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer
-      className="mx-auto max-w-[1080px] px-8 pt-[52px] pb-8 max-[860px]:px-5"
+      className="mx-auto max-w-[1080px] px-5 pt-10 pb-6 min-[860px]:px-8 min-[860px]:pt-[52px] min-[860px]:pb-8"
       style={{ borderTop: "1px solid var(--color-line)" }}
     >
       <div
-        className="mb-9 grid gap-[60px] pb-9 max-[860px]:grid-cols-1 max-[860px]:gap-8"
-        style={{
-          gridTemplateColumns: "1.5fr 1fr 1fr",
-          borderBottom: "1px solid var(--color-line)",
-        }}
+        className="mb-6 grid grid-cols-1 gap-6 pb-6 min-[860px]:mb-9 min-[860px]:grid-cols-[1.5fr_1fr_1fr] min-[860px]:gap-[60px] min-[860px]:pb-9"
+        style={{ borderBottom: "1px solid var(--color-line)" }}
       >
         <div>
           <div className="mb-2 text-[17px] font-extrabold tracking-[-0.03em] text-dark">
@@ -63,9 +60,9 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="flex justify-between text-xs text-sub">
+      <div className="flex flex-col gap-1 text-xs text-sub min-[860px]:flex-row min-[860px]:justify-between">
         <span>NÄHRO — Wissenschaftlich fundierte Ernährungsaufklärung</span>
-        <span>© 2025</span>
+        <span>© 2026</span>
       </div>
     </footer>
   );
