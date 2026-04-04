@@ -72,7 +72,7 @@ export const categories: Category[] = [
     longDesc:
       "Kohlenhydrate, Fette, Proteine, Vitamine, Mineralstoffe — die Basics der Ernährungswissenschaft. Verständlich erklärt, ohne unnötige Komplexität.",
     color: "teal",
-    count: 2,
+    count: 3,
     icon: "blocks",
     topics: ["Makronährstoffe", "Mikronährstoffe", "Kalorien", "Vitamine", "Mineralstoffe"],
   },

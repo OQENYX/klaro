@@ -11,6 +11,17 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: "deutsche-ernaehrung-kalorien-protein",
+    title: "So isst Deutschland — zu viele Kalorien, zu wenig Protein",
+    excerpt:
+      "~3.000 kcal, 110 g Zucker, nur 70 g Protein: Warum der deutsche Durchschnitt überernährt und unterversorgt zugleich ist.",
+    category: "Grundlagen",
+    categoryColor: "teal",
+    readTime: 9,
+    date: "2025-04-04",
+    featured: true,
+  },
+  {
     id: "endometriose-ernaehrung",
     title: "Endometriose & Ernährung — was wirklich hilft",
     excerpt:
@@ -19,7 +30,6 @@ export const articles: Article[] = [
     categoryColor: "rose",
     readTime: 8,
     date: "2025-04-04",
-    featured: true,
   },
   {
     id: "testosteron-ernaehrung",
@@ -40,7 +50,6 @@ export const articles: Article[] = [
     categoryColor: "orange",
     readTime: 5,
     date: "2025-04-01",
-    featured: true,
   },
   {
     id: "vitamin-d-maenner",
