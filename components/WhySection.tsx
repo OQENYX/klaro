@@ -34,7 +34,7 @@ export default function WhySection() {
       id="why"
     >
       <div className="rv mb-2 text-[11px] font-bold uppercase tracking-[.1em] text-sub">
-        Warum KLARO?
+        Warum NÄHRO?
       </div>
       <div
         className="rv mb-9 font-extrabold leading-[1.04] text-dark"

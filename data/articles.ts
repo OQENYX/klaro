@@ -12,9 +12,9 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: "deutsche-ernaehrung-kalorien-protein",
-    title: "So isst Deutschland — zu viele Kalorien, zu wenig Protein",
+    title: "So isst der DACH-Raum — zu viele Kalorien, zu wenig Protein",
     excerpt:
-      "~3.000 kcal, 110 g Zucker, nur 70 g Protein: Warum der deutsche Durchschnitt überernährt und unterversorgt zugleich ist.",
+      "~3.000 kcal, 110 g Zucker, nur 70 g Protein: Warum der Durchschnitt in DE, AT & CH überernährt und unterversorgt zugleich ist.",
     category: "Grundlagen",
     categoryColor: "teal",
     readTime: 9,

@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kategorien | KLARO",
+  title: "Kategorien | NÄHRO",
 };
 
 export default function KategorienPage() {

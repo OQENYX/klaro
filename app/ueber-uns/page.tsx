@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Über uns — KLARO",
+  title: "Über uns — NÄHRO",
   description:
-    "KLARO ist das Wissensportal von WEY Nutrition. Wissenschaftliche Ernährungsaufklärung — quellenbasiert, verständlich, für alle.",
+    "NÄHRO ist das Wissensportal von WEY Nutrition. Wissenschaftliche Ernährungsaufklärung — quellenbasiert, verständlich, für alle.",
 };
 
 export default function UeberUnsPage() {
@@ -41,7 +41,7 @@ export default function UeberUnsPage() {
             </span>
           </h1>
           <p className="rv mt-5 max-w-[520px] text-[15px] font-normal leading-[1.7] text-white/70">
-            KLARO ist das Wissensportal von WEY Nutrition.
+            NÄHRO ist das Wissensportal von WEY Nutrition.
             Unser Ziel: Die Wissenschaft hinter guter Ernährung verständlich
             und quellenbasiert erklären — damit du weißt, was wirklich zählt.
           </p>
@@ -178,11 +178,11 @@ export default function UeberUnsPage() {
               letterSpacing: "-.035em",
             }}
           >
-            KLARO &times; WEY Nutrition.
+            NÄHRO &times; WEY Nutrition.
           </div>
 
           <div className="grid grid-cols-2 gap-4 max-[860px]:grid-cols-1">
-            {/* KLARO card */}
+            {/* NÄHRO card */}
             <div
               className="rv flex flex-col gap-5 rounded-[22px] bg-white p-8"
               style={{
@@ -206,14 +206,14 @@ export default function UeberUnsPage() {
                   className="mb-1 text-[19px] font-extrabold text-dark"
                   style={{ letterSpacing: "-.025em" }}
                 >
-                  KLARO
+                  NÄHRO
                 </div>
                 <div className="text-[13px] font-semibold text-sub">
                   Wissensportal
                 </div>
               </div>
               <div className="text-[14px] font-normal leading-[1.7] text-sub">
-                KLARO ist die Aufklärungsplattform: Hier werden
+                NÄHRO ist die Aufklärungsplattform: Hier werden
                 Ernährungsthemen wissenschaftlich eingeordnet, Mythen
                 hinterfragt und komplexe Studien verständlich aufbereitet.
                 Komplett kostenlos und ohne Registrierung.
@@ -272,7 +272,7 @@ export default function UeberUnsPage() {
                 Alles auf gute Ernährung ausgerichtet: ob zum Abnehmen,
                 Muskelaufbau oder einfach für eine bessere Versorgung im Alltag.
                 Die Produktentwicklung basiert auf denselben wissenschaftlichen
-                Grundlagen, die auch KLARO vermittelt.
+                Grundlagen, die auch NÄHRO vermittelt.
               </div>
               <div className="mt-auto flex flex-wrap gap-2 pt-2">
                 {["Supplements", "Funktionelle Foods", "Evidenzbasiert"].map(
@@ -333,7 +333,7 @@ export default function UeberUnsPage() {
                 </div>
                 <div className="max-w-[640px] text-[14px] font-normal leading-[1.7] text-sub">
                   WEY Nutrition steht für Produkte, die auf echte Ernährungswissenschaft
-                  setzen — nicht auf Marketing-Hypes. KLARO ist die Aufklärungsseite
+                  setzen — nicht auf Marketing-Hypes. NÄHRO ist die Aufklärungsseite
                   dazu: Hier erklären wir die Wissenschaft hinter guter Ernährung,
                   damit du fundierte Entscheidungen treffen kannst. Keine versteckten
                   Verkaufsabsichten — einfach Wissen für alle.

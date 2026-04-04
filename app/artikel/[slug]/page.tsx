@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps) {
   const article = getArticleBySlug(slug);
   if (!article) return {};
   return {
-    title: `${article.title} | KLARO`,
+    title: `${article.title} | NÄHRO`,
     description: article.description,
   };
 }

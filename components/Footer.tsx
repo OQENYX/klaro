@@ -15,7 +15,7 @@ export default function Footer() {
       >
         <div>
           <div className="mb-2 text-[17px] font-extrabold tracking-[-0.03em] text-dark">
-            KLARO
+            NÄHRO
           </div>
           <p className="text-sm font-normal leading-[1.7] text-sub">
             Ernährung. Erklärt.
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex justify-between text-xs text-sub">
-        <span>KLARO — Wissenschaftlich fundierte Ernährungsaufklärung</span>
+        <span>NÄHRO — Wissenschaftlich fundierte Ernährungsaufklärung</span>
         <span>© 2025</span>
       </div>
     </footer>

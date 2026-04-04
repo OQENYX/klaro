@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Alle Artikel | KLARO",
+  title: "Alle Artikel | NÄHRO",
 };
 
 export default function ArtikelIndex() {

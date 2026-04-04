@@ -15,7 +15,7 @@ export default function Nav() {
         href="/"
         className="text-lg font-extrabold tracking-[-0.03em] text-dark no-underline"
       >
-        KLARO
+        NÄHRO
       </Link>
       <div className="flex gap-7 max-[860px]:hidden">
         <Link

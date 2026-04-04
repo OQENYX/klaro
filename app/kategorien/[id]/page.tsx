@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps) {
   const cat = getCategoryById(id);
   if (!cat) return {};
   return {
-    title: `${cat.name} — Artikel | KLARO`,
+    title: `${cat.name} — Artikel | NÄHRO`,
     description: cat.longDesc,
   };
 }

@@ -1,4 +1,4 @@
-# CLAUDE.md — KLARO Ernährungs-Website
+# CLAUDE.md — NÄHRO Ernährungs-Website
 
 Dieses Dokument ist der persistente Kontext für Claude Code.
 Immer lesen bevor du Code schreibst oder änderst.
@@ -7,7 +7,7 @@ Immer lesen bevor du Code schreibst oder änderst.
 
 ## Projektübersicht
 
-**KLARO** ist eine wissenschaftliche Ernährungs-Aufklärungswebsite auf Deutsch.
+**NÄHRO** ist eine wissenschaftliche Ernährungs-Aufklärungswebsite auf Deutsch.
 Ziel: Komplexe Ernährungsthemen einfach, bold und quellenbasiert erklären.
 Keine Produkte. Kein Marketing. Nur Fakten mit Belegen.
 
@@ -157,11 +157,11 @@ Alle Brand-Werte kommen aus `lib/config.ts`:
 
 ```ts
 export const siteConfig = {
-  name: "KLARO",
+  name: "NÄHRO",
   tagline: "Ernährung. Erklärt.",
   sub: "Wissenschaftlich. Ohne Umwege.",
   accentColor: "#1A3D2B",
-  url: "https://klaro.de"
+  url: "https://nähro.ch"
 }
 ```
 
