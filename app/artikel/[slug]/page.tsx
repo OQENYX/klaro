@@ -20,8 +20,21 @@ export async function generateMetadata({ params }: PageProps) {
   const article = getArticleBySlug(slug);
   if (!article) return {};
   return {
-    title: `${article.title} | NÄHRO`,
+    title: `${article.title} — NÄHRO`,
     description: article.description,
+    openGraph: {
+      title: `${article.title} — NÄHRO`,
+      description: article.description,
+      url: `https://nähro.ch/artikel/${slug}`,
+      siteName: "NÄHRO",
+      locale: "de_CH",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${article.title} — NÄHRO`,
+      description: article.description,
+    },
   };
 }
 
@@ -38,7 +51,7 @@ export default async function ArticlePage({ params }: PageProps) {
   return (
     <>
       <Nav />
-      <article className="mx-auto max-w-[1080px] px-8 py-20 max-[860px]:px-5">
+      <article className="mx-auto max-w-[1080px] px-5 py-12 min-[860px]:px-8 min-[860px]:py-20">
         <div className="mx-auto max-w-[680px]">
           <BackButton />
 

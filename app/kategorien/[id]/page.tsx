@@ -42,7 +42,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
       {/* Hero Banner with Mesh Gradient */}
       <section
-        className="relative overflow-hidden px-8 pt-20 pb-16 text-white max-[860px]:px-5"
+        className="relative overflow-hidden px-5 pt-14 pb-10 text-white min-[860px]:px-8 min-[860px]:pt-20 min-[860px]:pb-16"
         style={{ background: gradient }}
       >
         <div className="mx-auto max-w-[1080px]">
@@ -81,7 +81,7 @@ export default async function CategoryPage({ params }: PageProps) {
             </div>
             <div>
               <h1
-                className="text-[42px] font-extrabold leading-[1.05] text-white max-[860px]:text-[32px]"
+                className="text-[30px] font-extrabold leading-[1.05] text-white min-[860px]:text-[42px]"
                 style={{ letterSpacing: "-.04em" }}
               >
                 {cat.name}
@@ -139,7 +139,7 @@ export default async function CategoryPage({ params }: PageProps) {
       </section>
 
       {/* Articles Section */}
-      <div className="mx-auto max-w-[1080px] px-8 py-16 max-[860px]:px-5">
+      <div className="mx-auto max-w-[1080px] px-5 py-12 min-[860px]:px-8 min-[860px]:py-16">
         {articles.length > 0 ? (
           <>
             <div className="rv mb-2 text-[11px] font-bold uppercase tracking-[.1em] text-sub">
@@ -155,7 +155,7 @@ export default async function CategoryPage({ params }: PageProps) {
               Alle Artikel zu {cat.name}.
             </div>
 
-            <div className="grid grid-cols-2 gap-3.5 max-[860px]:grid-cols-1">
+            <div className="grid grid-cols-1 gap-2.5 min-[860px]:grid-cols-2 min-[860px]:gap-3.5">
               {articles.map((article, i) => {
                 const formattedDate = new Date(
                   article.lastUpdated
@@ -274,7 +274,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
       {/* Other Categories */}
       <section className="bg-bg py-16">
-        <div className="mx-auto max-w-[1080px] px-8 max-[860px]:px-5">
+        <div className="mx-auto max-w-[1080px] px-5 min-[860px]:px-8">
           <div className="rv mb-2 text-[11px] font-bold uppercase tracking-[.1em] text-sub">
             Weitere Themen
           </div>
@@ -287,7 +287,7 @@ export default async function CategoryPage({ params }: PageProps) {
           >
             Andere Kategorien entdecken.
           </div>
-          <div className="grid grid-cols-3 gap-3.5 max-[860px]:grid-cols-2 max-[480px]:grid-cols-1">
+          <div className="grid grid-cols-1 gap-2.5 min-[480px]:grid-cols-2 min-[860px]:grid-cols-3 min-[860px]:gap-3.5">
             {categories
               .filter((c) => c.id !== cat.id)
               .slice(0, 3)

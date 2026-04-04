@@ -11,7 +11,29 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "NÄHRO — Ernährung. Erklärt.",
-  description: "Wissenschaftlich. Ohne Umwege. Jeder Satz mit Quelle.",
+  description: "Wissenschaftlich. Ohne Umwege. Jeder Satz mit Quelle — keine Meinungen, kein Marketing.",
+  metadataBase: new URL("https://xn--nhro-loa.ch"),
+  openGraph: {
+    title: "NÄHRO — Ernährung. Erklärt.",
+    description: "Wissenschaftlich. Ohne Umwege. Jeder Satz mit Quelle — keine Meinungen, kein Marketing.",
+    url: "https://nähro.ch",
+    siteName: "NÄHRO",
+    locale: "de_CH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NÄHRO — Ernährung. Erklärt.",
+    description: "Wissenschaftlich. Ohne Umwege. Jeder Satz mit Quelle.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({
