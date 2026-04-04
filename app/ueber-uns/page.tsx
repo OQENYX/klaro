@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Über uns — KLARO",
   description:
-    "KLARO ist ein Projekt von WEY Nutrition. Wissenschaftliche Ernährungsaufklärung — quellenbasiert, unabhängig, ohne Produktwerbung.",
+    "KLARO ist das Wissensportal von WEY Nutrition. Wissenschaftliche Ernährungsaufklärung — quellenbasiert, verständlich, für alle.",
 };
 
 export default function UeberUnsPage() {
@@ -41,9 +41,9 @@ export default function UeberUnsPage() {
             </span>
           </h1>
           <p className="rv mt-5 max-w-[520px] text-[15px] font-normal leading-[1.7] text-white/70">
-            KLARO ist ein unabhängiges Wissensportal von WEY Nutrition.
-            Unser Ziel: Komplexe Ernährungsthemen verständlich, quellenbasiert
-            und ohne versteckte Verkaufsabsichten aufbereiten.
+            KLARO ist das Wissensportal von WEY Nutrition.
+            Unser Ziel: Die Wissenschaft hinter guter Ernährung verständlich
+            und quellenbasiert erklären — damit du weißt, was wirklich zählt.
           </p>
         </div>
       </section>
@@ -263,17 +263,19 @@ export default function UeberUnsPage() {
                   WEY Nutrition
                 </div>
                 <div className="text-[13px] font-semibold text-sub">
-                  Ernährungsberatung
+                  Ernährungsprodukte
                 </div>
               </div>
               <div className="text-[14px] font-normal leading-[1.7] text-sub">
-                WEY Nutrition ist die Praxis hinter KLARO:
-                Individuelle Ernährungsberatung, evidenzbasierte Konzepte und
-                persönliche Begleitung. Die Erfahrung aus der Beratung
-                fließt direkt in die Inhalte von KLARO ein.
+                WEY Nutrition entwickelt hochwertige Ernährungsprodukte
+                — von Proteinpulvern bis zu funktionellen Lebensmitteln.
+                Alles auf gute Ernährung ausgerichtet: ob zum Abnehmen,
+                Muskelaufbau oder einfach für eine bessere Versorgung im Alltag.
+                Die Produktentwicklung basiert auf denselben wissenschaftlichen
+                Grundlagen, die auch KLARO vermittelt.
               </div>
               <div className="mt-auto flex flex-wrap gap-2 pt-2">
-                {["Ernährungsberatung", "Evidenzbasiert", "Persönlich"].map(
+                {["Supplements", "Funktionelle Foods", "Evidenzbasiert"].map(
                   (pill) => (
                     <span
                       key={pill}
@@ -330,11 +332,11 @@ export default function UeberUnsPage() {
                   Warum beides zusammengehört
                 </div>
                 <div className="max-w-[640px] text-[14px] font-normal leading-[1.7] text-sub">
-                  In der Ernährungsberatung sehen wir täglich, wie viel
-                  Unsicherheit durch widersprüchliche Informationen entsteht.
-                  KLARO ist unsere Antwort darauf: Ein frei zugängliches
-                  Wissensportal, das die gleiche wissenschaftliche Sorgfalt
-                  anwendet wie unsere Beratung — nur eben für alle.
+                  WEY Nutrition steht für Produkte, die auf echte Ernährungswissenschaft
+                  setzen — nicht auf Marketing-Hypes. KLARO ist die Aufklärungsseite
+                  dazu: Hier erklären wir die Wissenschaft hinter guter Ernährung,
+                  damit du fundierte Entscheidungen treffen kannst. Keine versteckten
+                  Verkaufsabsichten — einfach Wissen für alle.
                 </div>
               </div>
             </div>
