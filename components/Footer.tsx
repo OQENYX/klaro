@@ -60,9 +60,23 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-1 text-xs text-sub min-[860px]:flex-row min-[860px]:justify-between">
+      <div className="flex flex-col gap-2 text-xs text-sub min-[860px]:flex-row min-[860px]:items-center min-[860px]:justify-between">
         <span>NÄHRO — Wissenschaftlich fundierte Ernährungsaufklärung</span>
-        <span>© 2026</span>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/impressum"
+            className="text-sub no-underline transition-colors duration-150 hover:text-dark"
+          >
+            Impressum
+          </Link>
+          <Link
+            href="/datenschutz"
+            className="text-sub no-underline transition-colors duration-150 hover:text-dark"
+          >
+            Datenschutz
+          </Link>
+          <span>© 2026</span>
+        </div>
       </div>
     </footer>
   );
