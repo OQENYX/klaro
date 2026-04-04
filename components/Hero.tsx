@@ -65,7 +65,7 @@ export default function Hero() {
               "0 2px 24px rgba(0,0,0,.06), 0 1px 0 rgba(255,255,255,.9) inset",
           }}
         >
-          <StatItem value="6" label="Kategorien" color="#059669" border />
+          <StatItem value="8" label="Kategorien" color="#059669" border />
           <StatItem value="100%" label="Quellenbasiert" color="#7C3AED" />
           <StatItem value="0" label="Werbung" color="#EA580C" border />
           <StatItem value="∞" label="Nachprüfbar" color="#0284C7" />

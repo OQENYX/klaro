@@ -426,7 +426,7 @@ export default function UeberUnsPage() {
             {[
               { value: "100%", label: "Quellenbasiert" },
               { value: "0", label: "Produktwerbung" },
-              { value: "6", label: "Themenbereiche" },
+              { value: "8", label: "Themenbereiche" },
               { value: "Frei", label: "Zugänglich für alle" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
