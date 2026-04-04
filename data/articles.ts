@@ -18,7 +18,7 @@ export const articles: Article[] = [
     category: "Grundlagen",
     categoryColor: "teal",
     readTime: 9,
-    date: "2025-04-04",
+    date: "2026-04-04",
     featured: true,
   },
   {
@@ -29,7 +29,7 @@ export const articles: Article[] = [
     category: "Frauengesundheit",
     categoryColor: "rose",
     readTime: 8,
-    date: "2025-04-04",
+    date: "2026-04-04",
   },
   {
     id: "testosteron-ernaehrung",
@@ -39,7 +39,7 @@ export const articles: Article[] = [
     category: "Männergesundheit",
     categoryColor: "indigo",
     readTime: 7,
-    date: "2025-04-03",
+    date: "2026-04-03",
   },
   {
     id: "kalorien-schaetzen-warum-es-scheitert",
@@ -49,7 +49,7 @@ export const articles: Article[] = [
     category: "Abnehmen",
     categoryColor: "orange",
     readTime: 5,
-    date: "2025-04-01",
+    date: "2026-04-01",
   },
   {
     id: "vitamin-d-maenner",
@@ -59,7 +59,7 @@ export const articles: Article[] = [
     category: "Männergesundheit",
     categoryColor: "indigo",
     readTime: 6,
-    date: "2025-03-30",
+    date: "2026-03-30",
   },
   {
     id: "periode-ernaehrung-zyklus",
@@ -69,7 +69,7 @@ export const articles: Article[] = [
     category: "Frauengesundheit",
     categoryColor: "rose",
     readTime: 7,
-    date: "2025-03-28",
+    date: "2026-03-28",
   },
   {
     id: "zink-magnesium-maenner",
@@ -79,7 +79,7 @@ export const articles: Article[] = [
     category: "Männergesundheit",
     categoryColor: "indigo",
     readTime: 6,
-    date: "2025-03-25",
+    date: "2026-03-25",
   },
   {
     id: "koerperfett-frauen",
@@ -89,7 +89,7 @@ export const articles: Article[] = [
     category: "Frauengesundheit",
     categoryColor: "rose",
     readTime: 6,
-    date: "2025-03-22",
+    date: "2026-03-22",
   },
   {
     id: "kalorien-was-sind-sie-wirklich",
@@ -99,7 +99,7 @@ export const articles: Article[] = [
     category: "Grundlagen",
     categoryColor: "teal",
     readTime: 6,
-    date: "2025-04-01",
+    date: "2026-04-01",
   },
   {
     id: "makronaehrstoffe-erklaert",
@@ -109,7 +109,7 @@ export const articles: Article[] = [
     category: "Grundlagen",
     categoryColor: "teal",
     readTime: 8,
-    date: "2025-03-25",
+    date: "2026-03-25",
   },
   {
     id: "abendessen-macht-dick",
@@ -119,7 +119,7 @@ export const articles: Article[] = [
     category: "Mythen",
     categoryColor: "pink",
     readTime: 5,
-    date: "2025-03-20",
+    date: "2026-03-20",
   },
   {
     id: "detox-mythos",
@@ -129,7 +129,7 @@ export const articles: Article[] = [
     category: "Mythen",
     categoryColor: "pink",
     readTime: 5,
-    date: "2025-03-15",
+    date: "2026-03-15",
   },
   {
     id: "reizdarm-fodmap",
@@ -139,7 +139,7 @@ export const articles: Article[] = [
     category: "Darm",
     categoryColor: "sky",
     readTime: 6,
-    date: "2025-03-10",
+    date: "2026-03-10",
   },
   {
     id: "mikrobiom-grundlagen",
@@ -149,7 +149,7 @@ export const articles: Article[] = [
     category: "Darm",
     categoryColor: "sky",
     readTime: 7,
-    date: "2025-03-05",
+    date: "2026-03-05",
   },
   {
     id: "jojo-effekt-wissenschaft",
@@ -159,7 +159,7 @@ export const articles: Article[] = [
     category: "Abnehmen",
     categoryColor: "orange",
     readTime: 6,
-    date: "2025-03-01",
+    date: "2026-03-01",
   },
   {
     id: "wie-viel-protein-pro-tag",
@@ -169,7 +169,7 @@ export const articles: Article[] = [
     category: "Protein",
     categoryColor: "violet",
     readTime: 7,
-    date: "2025-02-20",
+    date: "2026-02-20",
   },
   {
     id: "sucralose-sicher-oder-nicht",
@@ -179,7 +179,7 @@ export const articles: Article[] = [
     category: "Süßstoffe",
     categoryColor: "emerald",
     readTime: 5,
-    date: "2025-02-10",
+    date: "2026-02-10",
   },
   {
     id: "protein-thermogenese-kalorien",
@@ -189,7 +189,7 @@ export const articles: Article[] = [
     category: "Protein",
     categoryColor: "violet",
     readTime: 5,
-    date: "2025-02-01",
+    date: "2026-02-01",
   },
   {
     id: "aspartam-wirklich-gefaehrlich",
@@ -199,6 +199,6 @@ export const articles: Article[] = [
     category: "Süßstoffe",
     categoryColor: "emerald",
     readTime: 6,
-    date: "2025-01-15",
+    date: "2026-01-15",
   },
 ];
