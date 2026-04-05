@@ -11,7 +11,9 @@ Immer lesen bevor du Code schreibst oder änderst.
 Ziel: Komplexe Ernährungsthemen einfach, bold und quellenbasiert erklären.
 Keine Produkte. Kein Marketing. Nur Fakten mit Belegen.
 
-**Stack:** Next.js 15 (App Router) · Tailwind CSS v3 · MDX · TypeScript
+**Stack:** Next.js 15 (App Router) · Tailwind CSS v4 · MDX · TypeScript · Resend (Email)
+
+**Hosting:** Google Cloud (kein Vercel — keine vercel.json anlegen)
 
 ---
 
@@ -49,39 +51,101 @@ Keine Produkte. Kein Marketing. Nur Fakten mit Belegen.
 
 ---
 
-## Dateistruktur
+## Dateistruktur (aktuell)
 
 ```
 klaro/
 ├── app/
-│   ├── page.tsx                    # Homepage
+│   ├── page.tsx                         # Homepage
+│   ├── layout.tsx                       # Root layout (Inter font, Nav, Footer)
+│   ├── globals.css
 │   ├── artikel/
-│   │   ├── page.tsx               # Article index
-│   │   └── [slug]/
-│   │       └── page.tsx           # Single article
+│   │   ├── page.tsx                     # Artikel-Index mit Filterung
+│   │   └── [slug]/page.tsx              # Einzelartikel
 │   ├── kategorien/
-│   │   └── page.tsx               # Category overview
-│   └── layout.tsx                 # Root layout (Inter font, NavBar, Footer)
+│   │   ├── page.tsx                     # Kategorien-Übersicht
+│   │   └── [id]/page.tsx                # Kategorie-Detail
+│   ├── feed.xml/route.ts                # RSS Feed (fertig)
+│   ├── api/
+│   │   ├── articles/route.ts            # GET alle Artikel als JSON
+│   │   ├── subscribe/route.ts           # POST Newsletter-Anmeldung (Resend)
+│   │   └── cron/newsletter/route.ts     # GET täglicher Newsletter-Versand
+│   ├── impressum/page.tsx
+│   ├── datenschutz/page.tsx
+│   └── ueber-uns/page.tsx
 ├── components/
-│   ├── StatBlock.tsx              # Große Datenpunkt-Komponente
-│   ├── MythDebunk.tsx             # Mythos vs. Fakt Block
-│   ├── DataTable.tsx              # Styled MDX table wrapper
-│   ├── CategoryBadge.tsx          # Kategorie-Pill
-│   ├── ArticleCard.tsx            # Artikel-Karte für Index
-│   ├── ArticleProgressBar.tsx     # Scroll-Fortschrittsbalken
-│   ├── SourceList.tsx             # Quellenverzeichnis
-│   ├── NavBar.tsx                 # Navigation
-│   └── Footer.tsx                 # Footer
+│   ├── NewsletterSignup.tsx             # Newsletter-Formular (auf Homepage)
+│   ├── RelatedArticles.tsx             # "Weiterlesen" am Artikel-Ende
+│   ├── SearchModal.tsx                 # Suche (Fuse.js, Cmd+K)
+│   ├── ShareButton.tsx                 # Native Share API
+│   ├── ArticleProgressBar.tsx          # Scroll-Fortschrittsbalken
+│   ├── StatBlock.tsx                   # Große Datenpunkt-Komponente
+│   ├── MythDebunk.tsx                  # Mythos vs. Fakt Block
+│   ├── DataTable.tsx                   # Styled MDX table wrapper
+│   ├── CategoryBadge.tsx               # Kategorie-Pill
+│   ├── ArticleCard.tsx / ArticleGrid.tsx
+│   ├── CategoryCard.tsx / CategoryGrid.tsx
+│   ├── SourceList.tsx                  # Quellenverzeichnis
+│   ├── Hero.tsx / Ticker.tsx / WhySection.tsx
+│   ├── Nav.tsx / Footer.tsx / BackButton.tsx
+│   ├── MdxContent.tsx                  # MDX Renderer
+│   ├── ScrollReveal.tsx / FadeIn.tsx / PageTransition.tsx  # ⚠️ siehe unten
+│   └── ...
 ├── content/
-│   └── artikel/                   # Alle MDX-Artikel hier
-│       ├── aspartam-wirklich-gefaehrlich.mdx
-│       ├── protein-thermogenese-kalorien.mdx
-│       └── kalorien-schaetzen-warum-es-scheitert.mdx
+│   └── artikel/                        # 26 MDX-Artikel (Stand April 2026)
+├── data/
+│   └── articles.ts                     # ⚠️ Statisches Array — siehe unten
 ├── lib/
-│   ├── config.ts                  # Brand-Konfiguration (Name, Tagline, etc.)
-│   ├── articles.ts                # MDX parsing + frontmatter utilities
-│   └── categories.ts              # Kategorie-Definitionen + Farben
-└── CLAUDE.md                      # Diese Datei
+│   ├── config.ts                       # Brand-Konfiguration
+│   ├── articles.ts                     # MDX parsing via gray-matter (server-side)
+│   └── categories.ts                   # Kategorie-Definitionen + Farben
+└── CLAUDE.md
+```
+
+---
+
+## Zwei Artikel-Datensysteme — wichtig zu verstehen
+
+Es gibt **zwei parallele Datenquellen** für Artikel:
+
+| | `lib/articles.ts` | `data/articles.ts` |
+|---|---|---|
+| Art | Liest MDX-Dateien via `fs` | Statisches TypeScript-Array |
+| Verwendet von | RSS Feed, Cron/Newsletter, API-Route | SearchModal, RelatedArticles, ArticleCard |
+| Problem | — | Muss manuell synchron gehalten werden |
+
+**Wenn ein neuer Artikel angelegt wird:** MDX-Datei in `/content/artikel/` erstellen UND Eintrag in `data/articles.ts` hinzufügen. Sonst fehlt er in Suche und Weiterlesen-Empfehlungen.
+
+Langfristig sollte `data/articles.ts` durch `lib/articles.ts` ersetzt werden — noch nicht gemacht.
+
+---
+
+## Newsletter-System (fertig)
+
+Gebaut mit **Resend** (resend.com). Benötigt 4 Env-Variablen:
+
+```
+RESEND_API_KEY=re_xxx...
+RESEND_AUDIENCE_ID=uuid-der-audience
+NEWSLETTER_FROM_EMAIL=newsletter@naehro.ch
+CRON_SECRET=langer-zufaelliger-string
+```
+
+**Ablauf:**
+1. Nutzer meldet sich über `NewsletterSignup`-Komponente an → `POST /api/subscribe` → in Resend Audience gespeichert
+2. Google Cloud Scheduler ruft täglich 09:00 Uhr `GET /api/cron/newsletter` auf
+3. Cron prüft: Artikel mit `date` in den letzten 25 Stunden?
+4. Falls ja: HTML-Email an alle Abonnenten via Resend
+
+**Google Cloud Scheduler einrichten (einmalig):**
+```bash
+gcloud scheduler jobs create http naehro-newsletter \
+  --schedule="0 9 * * *" \
+  --uri="https://deine-domain.ch/api/cron/newsletter" \
+  --http-method=GET \
+  --headers="Authorization=Bearer DEIN_CRON_SECRET" \
+  --time-zone="Europe/Zurich" \
+  --location="europe-west1"
 ```
 
 ---
@@ -96,7 +160,6 @@ klaro/
   sub="Und selbst das ist kein Gefahrenwert"
 />
 ```
-Design: `value` in `text-7xl font-black text-green-deep`, `label` in `text-sm text-secondary`
 
 ### MythDebunk
 ```tsx
@@ -107,14 +170,12 @@ Design: `value` in `text-7xl font-black text-green-deep`, `label` in `text-sm te
 ```
 
 ### DataTable
-Wird automatisch auf alle `<table>` Tags in MDX angewendet.
-Kein manuelles Wrapping nötig.
+Wird automatisch auf alle `<table>` Tags in MDX angewendet. Kein manuelles Wrapping.
 
 ### CategoryBadge
 ```tsx
 <CategoryBadge category="Süßstoffe" />
 ```
-Farben in `lib/categories.ts` definiert.
 
 ---
 
@@ -124,7 +185,7 @@ Farben in `lib/categories.ts` definiert.
 ---
 title: string
 description: string
-category: "Süßstoffe" | "Protein" | "Abnehmen" | "Darm" | "Mythen" | "Grundlagen"
+category: "Süßstoffe" | "Protein" | "Abnehmen" | "Darm" | "Mythen" | "Grundlagen" | "Frauengesundheit" | "Männergesundheit"
 date: YYYY-MM-DD
 lastUpdated: YYYY-MM-DD
 readingTime: number   # Minuten
@@ -140,14 +201,16 @@ sources:
 
 In `lib/categories.ts` definiert. Nicht inline hardcoden.
 
-| Kategorie | Badge BG | Badge Text | Beschreibung |
-|---|---|---|---|
-| Süßstoffe | `#E8F5E9` | `#1A3D2B` | ADI-Werte, Studien, Mythen zu Süßungsmitteln |
-| Protein | `#E3F2FD` | `#1565C0` | Biologischer Wert, Thermogenese, Quellen |
-| Abnehmen | `#FFF3E0` | `#E65100` | Kaloriendefizit, Tracking, Jojo-Effekt |
-| Darm | `#F3E5F5` | `#6A1B9A` | Mikrobiom, CED, Verträglichkeit |
-| Mythen | `#FFEBEE` | `#C62828` | Debunking verbreiteter Ernährungsmythen |
-| Grundlagen | `#F5F5F3` | `#424242` | Makros, Mikros, Basiswissen |
+| Kategorie | Badge BG | Badge Text |
+|---|---|---|
+| Süßstoffe | `#E8F5E9` | `#1A3D2B` |
+| Protein | `#E3F2FD` | `#1565C0` |
+| Abnehmen | `#FFF3E0` | `#E65100` |
+| Darm | `#F3E5F5` | `#6A1B9A` |
+| Mythen | `#FFEBEE` | `#C62828` |
+| Grundlagen | `#F5F5F3` | `#424242` |
+| Frauengesundheit | `#FCE4EC` | `#AD1457` |
+| Männergesundheit | `#E0F2F1` | `#00695C` |
 
 ---
 
@@ -169,35 +232,30 @@ export const siteConfig = {
 
 ---
 
-## Inhaltliche Prinzipien
+## Bekannte Artikel (26, Stand April 2026)
 
-Der Content-Stil folgt einem klaren Muster:
-
-1. **Behauptung aufgreifen** — Was glauben die meisten Menschen?
-2. **Wissenschaftlich einordnen** — Was sagen Studien / Behörden wirklich?
-3. **Konkret machen** — Zahlen, Tabellen, StatBlocks
-4. **Confounding erklären** — Warum Beobachtungsstudien ≠ Kausalität
-5. **Quelle angeben** — Immer, ohne Ausnahme
-
-### Tonalität
-- Direkt und respektvoll — kein Belehren
-- Kurze Sätze. Klare Struktur.
-- Fachjargon wird immer erklärt wenn er auftaucht
-- Keine Produktempfehlungen in Artikeln
+| Kategorie | Slugs |
+|---|---|
+| Süßstoffe | aspartam-wirklich-gefaehrlich, sucralose-sicher-oder-nicht, acesulfam-k |
+| Protein | protein-thermogenese-kalorien, wie-viel-protein-pro-tag, whey-isolat-vs-konzentrat |
+| Abnehmen | kalorien-schaetzen-warum-es-scheitert, kaloriendichte-satt-werden, intermittierendes-fasten, jojo-effekt-wissenschaft |
+| Grundlagen | kalorien-was-sind-sie-wirklich, makronaehrstoffe-erklaert, deutsche-ernaehrung-kalorien-protein |
+| Mythen | abendessen-macht-dick, detox-mythos, superfoods-mythos, kohlenhydrate-abends-mythos |
+| Darm | mikrobiom-grundlagen, reizdarm-fodmap, morbus-crohn-suessstoffe |
+| Frauengesundheit | endometriose-ernaehrung, periode-ernaehrung-zyklus, koerperfett-frauen |
+| Männergesundheit | testosteron-ernaehrung, vitamin-d-maenner, zink-magnesium-maenner |
 
 ---
 
-## Bekannte Inhaltsbasis
+## Bekannte Probleme (noch offen)
 
-Folgende Themen haben bereits ausgearbeitete wissenschaftliche Grundlagen:
+1. **Doppelte Datenhaltung** — `data/articles.ts` und `lib/articles.ts` koexistieren. Ziel: alles auf `lib/articles.ts` umstellen, damit SearchModal und RelatedArticles live aus MDX lesen statt aus statischem Array.
 
-| Thema | Kernaussagen |
-|---|---|
-| Aspartam | ADI 40mg/kg, NOAEL÷100, IARC 2B ≠ Beweis, Confounding in Studien |
-| Alle Süßstoffe | ADI-Tabelle EFSA, Acesulfam-K Update April 2025 (ADI erhöht auf 15mg/kg), Sucralose Re-eval 2026 |
-| Protein | Thermogenese 20–30%, BW Tabelle, Effizienz pro 100kcal, Empfehlungen nach Ziel |
-| Abnehmen | 30–40% Selbstunterschätzung, versteckte Kalorien, 20%-Argument, Strategie |
-| Süßstoffe & Darm | Viszerale Hypersensitivität, Polyole vs. intensive Süßstoffe, CED-Kontext |
+2. **Design-Verstöße in bestehenden Komponenten:**
+   - `RelatedArticles.tsx:103` — `hover:shadow-lg` → gegen Design-Prinzipien
+   - `ScrollReveal.tsx`, `FadeIn.tsx`, `PageTransition.tsx` — Animationen über `transition-colors` hinaus → gegen Design-Prinzipien
+
+3. **RSS Feed nutzt `data/articles.ts`** statt `lib/articles.ts` — neue Artikel ohne `data/articles.ts`-Eintrag fehlen im Feed.
 
 ---
 
@@ -206,18 +264,27 @@ Folgende Themen haben bereits ausgearbeitete wissenschaftliche Grundlagen:
 1. **Design-Tokens immer aus tailwind.config.ts** — keine Inline-Hex-Werte
 2. **Brand aus siteConfig** — niemals hardcoded
 3. **Kategorien aus lib/categories.ts** — nie inline definieren
-4. **Neue Artikel = neue .mdx Datei** in /content/artikel/ — nie in tsx hardcoden
+4. **Neue Artikel = neue .mdx Datei** in `/content/artikel/` + Eintrag in `data/articles.ts`
 5. **Mobile first** — jede Komponente erst auf 375px testen
 6. **Kein `shadow-*`** — nur `border` für Tiefe
 7. **Whitespace nie unterschreiten** — lieber mehr als weniger
 8. **`max-w-[680px]`** für alle Fließtext-Inhalte in Artikeln
+9. **Kein vercel.json** — Hosting ist Google Cloud
 
 ---
 
-## Zukünftige Features (noch nicht bauen — nur Kontext)
+## Feature-Status
 
-- [ ] RSS Feed für neue Artikel
-- [ ] Search (Fuse.js, client-side)
-- [ ] Dark Mode (CSS vars vorbereiten, aber nicht aktivieren)
-- [ ] Artikel-Sharing (native share API)
-- [ ] "Weiterlesen" Empfehlungen am Artikel-Ende
+| Feature | Status |
+|---|---|
+| Artikel-Index + Einzelartikel | ✅ fertig |
+| Kategorien-Übersicht + Detail | ✅ fertig |
+| Scroll-Fortschrittsbalken | ✅ fertig |
+| "Weiterlesen"-Empfehlungen | ✅ fertig (`RelatedArticles.tsx`) |
+| Suche (Fuse.js, Cmd+K) | ✅ fertig (`SearchModal.tsx`) |
+| Share-Button (native API) | ✅ fertig (`ShareButton.tsx`) |
+| RSS Feed | ✅ fertig (`/feed.xml`) |
+| Newsletter-Anmeldung | ✅ fertig (`NewsletterSignup.tsx`) |
+| Email-Automation bei neuen Artikeln | ✅ fertig (Resend + GCloud Scheduler) |
+| Dark Mode | ❌ noch nicht gebaut |
+| Doppelte Datenhaltung auflösen | ❌ noch nicht gemacht |
