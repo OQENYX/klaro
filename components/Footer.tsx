@@ -53,9 +53,19 @@ export default function Footer() {
         </div>
         <div>
           <div className="mb-3 text-[11px] font-bold uppercase tracking-[.08em] text-sub">
-            Prinzip
+            Abonnieren
           </div>
-          <p className="text-sm font-normal leading-[1.7] text-sub">
+          <ul className="flex flex-col gap-2">
+            <li>
+              <a
+                href="/feed.xml"
+                className="text-sm font-medium text-dark no-underline transition-colors duration-150 hover:text-sub"
+              >
+                RSS Feed
+              </a>
+            </li>
+          </ul>
+          <p className="mt-4 text-sm font-normal leading-[1.7] text-sub">
             Quellenbasiert. Keine Produkte, keine Empfehlungen.
           </p>
         </div>
